@@ -1,0 +1,60 @@
+<mat-toolbar color="primary"></mat-toolbar>
+
+
+<form class="border p-3 rounded-3" #form="ngForm" (ngSubmit)="addGrant()" novalidate>
+  <fieldset>
+    <div class="row g-0">
+      <div class="col mb-3">
+          <h1 class="fs-3">Add Grant Details</h1>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="mb-3 form-group">
+      <label for="grantName" class="form-label">Grant Name</label>
+      <input type="text"  id="grantName" 
+      name="grantName" required minlength="10" #grantName="ngModel"
+      [(ngModel)]="addGrantRequest.grantName">
+      <div *ngIf="!grantName?.valid && (grantName?.dirty || grantName?.touched)">
+        <small class="text-danger" *ngIf="grantName.errors?.['required']">
+           Grant Name is required
+        </small>
+        <small class="text-danger" *ngIf="grantName.errors?.['minlength']">
+           First Name Minimum Length is {{grantName.errors?.['minlength']?.requiredLength}}
+        </small>
+      </div>  
+    </div>
+  </div>
+  
+  <div class="row">
+   <div class="mb-3 form-group">
+       <label for="programCode" class="form-label">Program Code</label>
+       <input type="text"  id="programCode" 
+       name="programCode" required #programCode="ngModel" 
+       [(ngModel)]="addGrantRequest.programCode">
+       <small *ngIf="!programCode?.valid && (programCode?.dirty || programCode?.touched)">
+         <small class="text-danger" *ngIf="programCode.errors?.['required']">
+           Program Code is required
+         </small>
+        </small>
+  </div>    
+  </div>
+
+  <div class="row">
+  <div class=" mb-4 form-group">
+     <label for="startDate" class="form-label">Start Date</label>
+     <input type="date" id="startDate" name="startDate"  #startDate="ngModel"
+     [(ngModel)]="addGrantRequest.startDate">
+    </div>
+  </div>
+
+    <div class="row">
+    <div class=" mb-4 form-group">
+      <label for="endDate" class="form-label">End Date</label>
+      <input type="date" id="endDate" name="endDate"  [(ngModel)]="addGrantRequest.endDate">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid" >Submit</button>
+  </fieldset>
+  </form>
+

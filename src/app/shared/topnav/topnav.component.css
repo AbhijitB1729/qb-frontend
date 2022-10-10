@@ -1,0 +1,27 @@
+
+  .profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-brand{
+  padding-left: 20px;
+  padding-top: 20px;
+} 
+
+.dropdown-item {
+  float: right;
+}
+
+/*nav{
+  height:100%
+}
+
+app-topnav{
+  position:fixed;
+  width:100%;
+  top:0px;
+  height: 4rem;
+  z-index:2;
+}
+*/

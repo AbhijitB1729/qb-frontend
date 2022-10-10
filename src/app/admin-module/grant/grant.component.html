@@ -1,0 +1,36 @@
+<mat-toolbar color="primary"></mat-toolbar>
+
+<div class="container ">
+    <h2 class="mb-3">Grant Program</h2>
+
+    <button class=" btn btn-sm btn-primary" [routerLink]="['/add-grant']">ADD</button>
+    <table class="table" *ngIf="grants && grants.length>0" >
+       <!-- !-->
+        <thead>
+            <tr>
+              <td>Grant Name</td>  
+              <td>Program Code</td>  
+              <td>Start Date</td>  
+              <td>End Date</td>  
+              <td>Actions</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grant of grants ">
+                <td>{{grant.grantName}}</td>  
+                <td>{{grant.programCode}}</td>  
+                <td>{{grant.startDate}}</td>  
+                <td>{{grant.endDate}}</td>  
+                <td>
+                <button class=" btn btn-sm btn-warning" routerLink="/edit-grant/{{grant.id}}">Edit</button>  
+                <button class=" btn btn-sm btn-danger"  (click)="delete(grant.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+      <p *ngIf="!grants || grants.length <= 0">No Data to show</p> 
+    
+</div>
+
+   

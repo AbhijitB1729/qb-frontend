@@ -1,0 +1,17 @@
+
+
+form{
+  width: 30vw;
+  margin-left: 35vw;
+} 
+
+mat-toolbar{
+    margin-bottom: 40px;
+}
+
+h1{
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: center;
+}
+

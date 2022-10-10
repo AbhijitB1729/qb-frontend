@@ -1,0 +1,75 @@
+
+
+<form class="border p-3 rounded-3" #form="ngForm" (ngSubmit)="loginUser()">
+    <div class="row g-0">
+        <div class="col mb-3">
+            <h1 class="fs-3">Login</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter a valid email address"
+          name="email" #email="ngModel" required [pattern]="emailPattern"
+          [(ngModel)]="loginUserRequest.email">      
+          <div *ngIf="!email?.valid && (email?.dirty || email?.touched)">
+            <small class="text-danger" *ngIf="email.errors?.['required']">
+               Email is required
+            </small>
+            <small class="text-danger" *ngIf="email.errors!['pattern']"> 
+                Enter a valid Email
+            </small>	
+          </div>      
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password"
+          required minlength="5" name="password" #password="ngModel"
+          [(ngModel)]="loginUserRequest.password">
+          <div *ngIf="!password?.valid && (password?.dirty || password?.touched)">
+            <small class="text-danger" *ngIf="password.errors?.['required']">
+               Password is required
+            </small>
+            <small class="text-danger" *ngIf="password.errors?.['minlength']">
+               Password Minimum Length is {{password.errors?.['minlength']?.requiredLength}}
+            </small>
+          </div>  
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="mb-3">
+            <button  type="submit" class="btn btn-primary" [disabled]="form.invalid">Login</button>
+        </div>                      
+    </div> 
+
+    
+    <a  [routerLink]="['/add']" >Sign Up</a>
+
+</form>
+<!--
+      <div class="row">
+    <div class="mb-3 form-group">
+      <label for="grantName" class="form-label">Grant Name</label>
+      <input type="text"  id="grantName" 
+      name="grantName" required minlength="10" #grantName="ngModel"
+      [(ngModel)]="addGrantRequest.grantName">
+      <div *ngIf="!grantName?.valid && (grantName?.dirty || grantName?.touched)">
+        <small class="text-danger" *ngIf="grantName.errors?.['required']">
+           Grant Name is required
+        </small>
+        <small class="text-danger" *ngIf="grantName.errors?.['minlength']">
+           First Name Minimum Length is {{grantName.errors?.['minlength']?.requiredLength}}
+        </small>
+      </div>  
+    </div>
+  </div>
+
+  !-->
+
+
+

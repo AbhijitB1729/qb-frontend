@@ -1,0 +1,27 @@
+/*
+.reg{
+    margin:0 auto; 
+width:600px ;
+padding: 20px;
+background:#f9f9f9;
+border:2px solid #333;
+}
+
+form{
+    width: 50vw;
+    margin-left: 30vw;
+}
+
+h3{
+    text-decoration:underline;
+    color: blue;
+    text-align: center;
+}
+*/
+
+form{
+    width: 40vw;
+    margin-left: 25vw;
+    background-color: #8e75e4;  
+    
+} 

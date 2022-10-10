@@ -1,0 +1,22 @@
+
+h1{
+    text-align: center;
+    
+    
+}
+mat-toolbar {
+    color: white;
+}
+
+mat-sidenav {
+    width: 200px;
+    background: #fff;
+    color: white;
+    text-align: center;
+    
+}
+
+
+mat-sidenav-container {
+    height: calc(100vh - 40px);
+}

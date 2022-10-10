@@ -1,0 +1,30 @@
+form{
+    width: 30vw;
+    margin-left: 35vw;
+    background-color: antiquewhite;
+}
+
+#grantName{
+    width:100px;
+}
+
+#country{
+    width:200px;
+    margin-bottom: 30px;
+
+}
+
+
+label{
+    margin-right: 20px;
+}
+
+#state{
+    margin-bottom: 30px;
+}
+
+h2{
+    background-color:aliceblue;
+    text-align: center;
+}
+

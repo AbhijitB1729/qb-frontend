@@ -1,0 +1,17 @@
+h2{
+    text-decoration: underline;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-warning{
+    margin-right: 20px;
+}
+
+.btn-primary{
+    margin-bottom: 30px;
+}
+
+mat-toolbar{
+    margin-bottom: 40px;
+}
