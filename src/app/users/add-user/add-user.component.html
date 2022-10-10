@@ -5,44 +5,39 @@
 
 
     <div class="form-group">
-        <label>Email</label>
-        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="Email" />
-        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-            <div *ngIf="f['email'].errors['required']">Email is required</div>
-            <div *ngIf="f['email'].errors['email']">Email must be a valid email address</div>
-        </div>
-    </div>
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control"  placeholder="Email" />
+        <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">Email is required</span>
+    </div><br>
+
     <div class="form-group">
-        <label>First Name</label>
-        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }" placeholder="First Name"/>
-        <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
-            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
-        </div>
-    </div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="First Name"/>
+        <span class="text-danger" *ngIf="registerForm.controls['firstName'].dirty && registerForm.hasError('required','firstName')">First Name is required</span>
+    </div><br>
+
     <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" placeholder="Last Name"/>
-        <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
-            <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
-        </div>
-    </div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder="Last Name"/>
+        <span class="text-danger" *ngIf="registerForm.controls['lastName'].dirty && registerForm.hasError('required','lastName')">Last Name is required</span>
+    </div><br>
     
     <div class="form-group">
-        <label>Password</label>
-        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" placeholder="Password must be at least 5 characters" />
-        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-            <div *ngIf="f['password'].errors['required']">Password is required</div>
-            <div *ngIf="f['password'].errors['minlength']">Password must be at least 5 characters</div>
-        </div>
-    </div>
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" placeholder="Password must be at least 5 characters" />
+        <div class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">Password is required</div>
+            <div class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('minlength','password')" >Password must be at least 5 characters</div>
+        
+    </div><br>
+
     <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" placeholder="Confirm Password" />
-        <div *ngIf="submitted && f['confirmPassword'].errors" class="invalid-feedback">
-            <div *ngIf="f['confirmPassword'].errors['required']">Confirm Password is required</div>
-            <div *ngIf="f['confirmPassword'].errors['mustMatch']">Passwords must match</div>
-        </div>
-    </div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password" />
+        <div class="text-danger" *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('required','password')">Confirm Password is required</div>
+           <div class="text-danger" *ngIf="registerForm.controls['confirmPassword'].dirty && registerForm.hasError('mustMatch','confirmPassword')" >Passwords must Match</div>  
+    
+    </div><br>
+
     <div class="form-group">
         <button class="btn btn-primary" [disabled] = "registerForm.invalid">Register</button>
     </div>

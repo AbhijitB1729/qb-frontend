@@ -42,8 +42,16 @@ export class AddUserComponent implements OnInit {
           firstName:this.registerForm.get("firstName")?.value,
           lastName:this.registerForm.get("lastName")?.value,
           password:this.registerForm.get("password")?.value,
+          role:"user",
+          
        }
-       
+     
+     
+       if (this.registerForm.invalid) {
+        return;
+      }
+
+      console.log("working");
       this.usersService.onSubmit(registerRequest).subscribe((res:any)=>{
           console.log(res)
       }
@@ -51,9 +59,7 @@ export class AddUserComponent implements OnInit {
 
 
       
-      if (this.registerForm.invalid) {
-          return;
-      }
+     
       
 
       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
