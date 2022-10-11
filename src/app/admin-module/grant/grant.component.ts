@@ -4,7 +4,7 @@ import { GrantService } from 'src/app/Services/grant.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {Router, RouterLink} from '@angular/router'
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-grant',

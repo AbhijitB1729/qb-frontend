@@ -17,7 +17,7 @@ getAllDetail(): any {
 }
 
 addGrant(addGrantRequest:Grant): Observable<Grant> {
-  addGrantRequest.id='00000000-0000-0000-0000-000000000000';
+  addGrantRequest.id='0';
   return this.http.post<Grant>(this.baseApiUrl + '/api/Grant', addGrantRequest);
 }
 

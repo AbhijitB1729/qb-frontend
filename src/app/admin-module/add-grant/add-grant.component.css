@@ -3,6 +3,7 @@
 form{
   width: 30vw;
   margin-left: 35vw;
+  background-color: antiquewhite;
 } 
 
 mat-toolbar{
