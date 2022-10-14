@@ -1,4 +1,15 @@
-h2{
+.container{
+    margin-left: 20px;
+    
+
+}
+
+
+tr , td{
+    font-family:Tahoma, sans-serif
+}
+
+h1{
     text-decoration: underline;
     font-weight: bold;
     text-align: center;
@@ -9,9 +20,10 @@ h2{
 }
 
 .btn-primary{
-    margin-bottom: 30px;
+    margin-top: 40px;
 }
 
-mat-toolbar{
-    margin-bottom: 40px;
+.btn-secondary{
+    margin-bottom:60px;
 }
+

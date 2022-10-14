@@ -1,4 +1,4 @@
-<mat-toolbar color="primary"></mat-toolbar>
+
 
 
 <form class="border p-3 rounded-3" #form="ngForm" (ngSubmit)="addGrant()" novalidate>
@@ -55,6 +55,8 @@
       </div>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!form.valid" >Submit</button>
+    <button [routerLink]="['/grant-view']" class="btn btn-warning m-4"  >Go Back</button>
+   
   </fieldset>
   </form>
-
+ 

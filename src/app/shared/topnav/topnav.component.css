@@ -1,5 +1,31 @@
 
-  .profile {
+ /* .user{
+  float:right;
+  margin-bottom: 110px;
+  margin-left: 1260px;
+  
+ }
+
+ mat-icon{
+  font-size: 30px;
+ }
+ 
+ .side{
+  margin-bottom: 30px;
+  margin-left:-10px
+ }
+
+ mat-toolbar{
+  height:80px
+ }
+
+
+ p{
+  text-align: center;
+  margin-top: 40px;
+ }
+ 
+ .profile {
   display: flex;
   justify-content: space-between;
 }
@@ -11,17 +37,34 @@
 
 .dropdown-item {
   float: right;
+} */
+
+nav {
+  height: 100%;
 }
 
-/*nav{
-  height:100%
+.side-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-app-topnav{
-  position:fixed;
-  width:100%;
-  top:0px;
+.side-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.232);
+  border-radius: 30%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
   height: 4rem;
-  z-index:2;
+  z-index: 2;
 }
-*/
+
+.form{
+  padding-left:50px;
+  
+}

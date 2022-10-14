@@ -1,15 +1,19 @@
 
-<div class="container ">
-    <h2 class="mb-3">Grant Program</h2>
 
-    <button class=" btn btn-sm btn-primary" [routerLink]="['/add-grant']">ADD</button>
-    <table class="table" *ngIf="grants && grants.length>0" >
-       <!-- !-->
-        <thead>
+<div class="container">
+    <h1 class="mb-0">Grant Program</h1>
+
+    <button class=" btn btn-primary " [routerLink]="['/add-grant-view']">ADD</button>
+    <div class="text-end"> 
+     <button class=" btn btn-secondary " [routerLink]="['/navs']">Go Back</button>
+    </div>   
+     <table class="table" *ngIf="grants && grants.length>0" >
+    
+     <thead>
             <tr>
               <td>Grant Name</td>  
               <td>Program Code</td>  
-              <td>Start Date</td>  
+              <td>Start Date</td>   
               <td>End Date</td>  
               <td>Actions</td>
             </tr>
@@ -18,10 +22,10 @@
             <tr *ngFor="let grant of grants ">
                 <td>{{grant.grantName}}</td>  
                 <td>{{grant.programCode}}</td>  
-                <td>{{grant.startDate}}</td>  
-                <td>{{grant.endDate}}</td>  
+                <td>{{grant.startDate|date}}</td>  
+                <td>{{grant.endDate|date}}</td>  
                 <td>
-                <button class=" btn btn-sm btn-warning" routerLink="/edit-grant/{{grant.id}}">Edit</button>  
+                <button class=" btn btn-sm btn-warning" routerLink="/edit-grant-view/{{grant.id}}">Edit</button>  
                 <button class=" btn btn-sm btn-danger"  (click)="delete(grant.id)">Delete</button>
                 </td>
             </tr>
@@ -30,6 +34,10 @@
     </table>
       <p *ngIf="!grants || grants.length <= 0">No Data to show</p> 
     
-</div>
+</div> 
 
-   
+
+
+
+
+

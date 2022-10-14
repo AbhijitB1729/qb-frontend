@@ -35,7 +35,7 @@ export class AddGrantComponent implements OnInit {
     this.grantservice.addGrant(this.addGrantRequest)
     .subscribe({
       next: (grant:any) => {
-        this.router.navigate(['grant']);
+        this.router.navigate(['grant-view']);
         
       }})
  } 

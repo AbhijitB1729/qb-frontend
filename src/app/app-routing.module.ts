@@ -11,7 +11,12 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { AddGrantComponent } from './admin-module/add-grant/add-grant.component';
 import { EditGrantComponent } from './admin-module/edit-grant/edit-grant.component';
 import { ApplicationComponent } from './applicant/application/application.component';
-
+import { HomeComponent } from './home/home.component';
+import { NavsComponent } from './navs/navs.component';
+import { GrantViewComponent } from './grant-view/grant-view.component';
+import { AddGrantViewComponent } from './add-grant-view/add-grant-view.component';
+import { EditGrantViewComponent } from './edit-grant-view/edit-grant-view.component';
+import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path:'',
@@ -27,14 +32,31 @@ const routes: Routes = [
     component: LoginUserComponent
   },
   {
-    path: 'home',
+    path: 'topnav',
     component: TopnavComponent,
-    canActivate:[AuthGuard] 
 
+  },
+  {
+    path: 'footer',
+    component: FooterComponent,
+  },
+  {
+    path:'navs',
+    component: NavsComponent,
+    canActivate:[AuthGuard] 
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate:[AuthGuard] 
   },
   {
     path:'sidenav',
     component:SidenavComponent,
+  },
+  {
+    path:'main',
+    component:MainComponent,
   },
   {
     path:'grant',
@@ -51,7 +73,22 @@ const routes: Routes = [
   {
     path:'application',
     component:ApplicationComponent
-  }
+  },
+  {
+    path:'grant-view',
+    component:GrantViewComponent
+  },
+  { 
+    path:'add-grant-view',
+    component:AddGrantViewComponent
+  },
+  { 
+    path:'edit-grant-view/:id',
+    component:EditGrantViewComponent
+  },
+
+  
+
   
 
   

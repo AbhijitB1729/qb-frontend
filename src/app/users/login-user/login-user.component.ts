@@ -34,9 +34,11 @@ export class LoginUserComponent implements OnInit {
      console.log(res);
      localStorage.setItem('currentUser',res.name);
      localStorage.setItem('jwtToken',res.jwtToken);
+     localStorage.setItem('role',res.role);
+
      //this.toast.success({detail:'Success',summary:'User LoggedIn Succesfully'})
      alert("login successfull");
-     this.router.navigate(['/home']);
+     this.router.navigate(['/main']);
   },
 
 );

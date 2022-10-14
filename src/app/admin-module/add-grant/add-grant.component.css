@@ -2,8 +2,12 @@
 
 form{
   width: 30vw;
-  margin-left: 35vw;
+  margin-left: 0;
+  margin-top: 25px;
   background-color: antiquewhite;
+  margin-bottom: 100px;
+  height:500px
+    
 } 
 
 mat-toolbar{

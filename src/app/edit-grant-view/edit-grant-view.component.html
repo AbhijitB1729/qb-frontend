@@ -1,0 +1,51 @@
+
+<mat-toolbar style="min-height: 30px;height: 120px" color="primary">
+    <mat-toolbar-row>
+        <div class="user">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+        </button>
+      </div>
+        
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Logout</button>
+        </mat-menu>
+      </mat-toolbar-row>
+    
+    <button mat-icon-button  (click)="sidenav.toggle()">
+         <mat-icon class="menu-icon" >
+            menu
+        </mat-icon>
+    </button>
+  <p>  Welcome to GMS, {{currentUser}}</p>
+  <a *ngIf="role==='user'" class="applicant" routerLink="">Applicant form</a>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+            <mat-nav-list>
+            <a routerLink="/grant-view" mat-list-item color="white" >Grant</a>
+            <a mat-list-item>Review</a>
+          </mat-nav-list>
+    
+    
+    </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="content">
+                <app-edit-grant></app-edit-grant> 
+            </div>
+
+        </mat-sidenav-content>
+        <app-footer></app-footer>
+        
+         
+    
+</mat-sidenav-container>
+
+  <!-- <footer>
+    <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-black" href="#">GRANT MANAGEMENT SYSTEM</a>
+      </div>
+    </footer>
+   -->
+  <app-footer></app-footer>

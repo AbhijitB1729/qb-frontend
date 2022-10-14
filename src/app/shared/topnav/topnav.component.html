@@ -1,10 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid ">
 
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Welcome to GMS, {{currentUser}}</a>
-    </div>
+      <a class="navbar-brand" href="http://localhost:4200/home">Welcome to GMS, {{currentUser}}</a>
+    </div> -->
 
+
+
+   <!--  //needed from here
+    
+    <mat-toolbar  style="min-height: 30px;height: 30px" color="primary" >
+    <p>  Welcome to GMS, {{currentUser}} </p>
+       <mat-toolbar-row>
+        <div class="user">
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+        </button>
+      </div>
+        
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Logout</button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav>
+        <mat-nav-list  >
+          <a routerLink="/grant" mat-list-item >Grant</a>
+          <a mat-list-item>Review</a>
+        </mat-nav-list>
+      </mat-sidenav>
+    </mat-sidenav-container> -->
+
+<!-- 
     <div class="nav navbar-right">
         <button class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" >
             <i class="fa-solid fa-user"></i>     
@@ -12,10 +40,44 @@
         <ul class="dropdown-menu dropdown-menu-end ">
             <li><a class="dropdown-item"  href="#">Logout</a></li>
          </ul>   
-    </div>
-      
- </div>
-  
-</nav>
+    </div> -->
 
-<app-footer></app-footer>
+
+
+    <div class="container-fluid g-0" id="header">
+      <nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+          <div class="container-fluid">  
+              
+              <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()" >
+                  <i class="fa-solid fa-bars"></i>
+              <!--    <a class="navbar-brand px-4 me-5" href="#">My App</a>  -->
+              </div>
+      
+              <a class="navbar-brand px-4" >Welcome TO GMS</a>
+              <a  class="form" *ngIf="role==='user'" class="applicant" [routerLink]="['/application']" >Applicant form</a>
+      
+         
+         
+          
+          <div class="profile-logo dropright">
+          <button class="btn dropdown-toggle text-light" data-bs-toggle="dropdown" >
+             {{currentUser}} 
+          </button>
+          
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end ">
+              <li><a  class="dropdown-item " (click)="LogOut()">Logout</a></li>
+          </ul>
+          </div>
+      
+      </div>    
+      
+      </nav>
+      </div>
+      
+      
+      
+      
+      
+      
+ 
+

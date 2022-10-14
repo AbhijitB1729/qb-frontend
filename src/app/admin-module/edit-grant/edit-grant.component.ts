@@ -43,7 +43,7 @@ export class EditGrantComponent implements OnInit {
    .subscribe({
       next: (response:any) => {
    
-        this.router.navigate(['grant']);
+        this.router.navigate(['grant-view']);
       }
    });
  

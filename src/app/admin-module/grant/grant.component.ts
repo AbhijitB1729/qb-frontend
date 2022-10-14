@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {Router, RouterLink} from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module';
+import {DatePipe} from '@angular/common'; 
 
 @Component({
   selector: 'app-grant',
@@ -14,7 +15,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 export class GrantComponent implements OnInit {
   
   grants: Grant[] = [
-   
+    
+  
 ];
     
   
@@ -35,7 +37,7 @@ export class GrantComponent implements OnInit {
   delete(id:string){
     this.grantService.deleteGrant(id).subscribe({
       next : (response:any) => {
-        this.router.navigate(['grant']);
+        this.router.navigate(['grant-view']);
         alert("Grant Deleted");
         this.ngOnInit();
 
