@@ -1,8 +1,10 @@
 form{
-    width: 30vw;
-    margin-left: 35vw;
+    width: 40vw;
+    margin-left: 30vw;
     background-color: antiquewhite;
+    margin-top: 50px;
 }
+
 
 #grantName{
     width:100px;
@@ -26,5 +28,18 @@ label{
 h2{
     background-color:aliceblue;
     text-align: center;
+}
+
+table{
+    width:100%;
+
+}
+
+table,th,td{
+    border: 1px solid black;
+}
+
+.buttons{
+    text-align:center;
 }
 

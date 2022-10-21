@@ -17,7 +17,7 @@
             menu
         </mat-icon>
     </button>
-  <p>  Welcome to GMS, {{currentUser}}</p>
+  <p>  Welcome to GMS, {{firstName}}</p>
   <a *ngIf="role==='user'" class="applicant" routerLink="">Applicant form</a>
 </mat-toolbar>
 <mat-sidenav-container>
@@ -35,7 +35,6 @@
             </div>
 
         </mat-sidenav-content>
-        <app-footer></app-footer>
         
          
     

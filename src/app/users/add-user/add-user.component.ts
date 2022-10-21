@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'src/app/providers/confirm-password-validator'
 import { UsersService } from 'src/app/Services/users.service'
 import { User } from 'src/app/Models/user.model';
+import { NgToastService } from 'ng-angular-popup';
 
 
 
@@ -17,7 +18,7 @@ export class AddUserComponent implements OnInit {
   registerForm!: FormGroup;
     submitted = false;
  
-    constructor(private formBuilder: FormBuilder , private usersService:UsersService) { }
+    constructor(private formBuilder: FormBuilder , private usersService:UsersService, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -54,6 +55,7 @@ export class AddUserComponent implements OnInit {
       console.log("working");
       this.usersService.onSubmit(registerRequest).subscribe((res:any)=>{
           console.log(res)
+          this.toast.success({detail:'Success', summary:'New User Added', sticky:true})
       }
       );
 

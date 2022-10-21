@@ -29,6 +29,8 @@ import { GrantViewComponent } from './grant-view/grant-view.component';
 import { AddGrantViewComponent } from './add-grant-view/add-grant-view.component';
 import { EditGrantViewComponent } from './edit-grant-view/edit-grant-view.component';
 import { MainComponent } from './main/main.component';
+import { NgToastModule } from  'ng-angular-popup';
+import { ApplicantModule } from './applicant/applicant.module';
 
 
 @NgModule({
@@ -62,7 +64,10 @@ import { MainComponent } from './main/main.component';
     BrowserAnimationsModule,
     MatDividerModule,
     MatMenuModule,
-    SharedModule
+    SharedModule,
+    NgToastModule,
+    ApplicantModule
+    
     
     
     

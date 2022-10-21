@@ -1,10 +1,10 @@
+<app-topnav></app-topnav>
+<br>
 <form class="border p-3 rounded-3">
    <label for="grantName">Grant Name</label>
-   <select id="grantName" name="grantName">
-     <option value=""></option>
-     <option value=""></option>
-     <option value=""></option>
-     <option value=""></option>
+   <select style="width: 200px" id="grantName" name="grantName" >
+     <option *ngFor="let grant of grantDetail" value="{{grant.id}}">{{grant.grantName}}</option>
+     
    </select>
    
 <hr>
@@ -12,14 +12,14 @@
 <div class="row">
     <div class="mb-3">
       <label for="firstName" class="form-label">First Name</label>
-      <input type="text" class="form-control" id="firstName" name="firstName" readonly>
+      <input type="text" class="form-control" id="firstName" name="firstName" value="{{firstName}}" readonly>
     </div>
 </div>
 
 <div class="row">
     <div class="mb-3">
       <label for="lastName" class="form-label">Last Name</label>
-      <input type="text" class="form-control" id="lastName" name="lastName" readonly>
+      <input type="text" class="form-control" id="lastName" name="lastName" value="{{lastName}}" readonly>
     </div>
 </div>
 
@@ -27,7 +27,7 @@
 <div class="row">
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input type="text" class="form-control" id="email" name="email" readonly>
+      <input type="text" class="form-control" id="email" name="email" value="{{email}}" readonly>
     </div>
 </div>
 
@@ -120,6 +120,32 @@
   <hr>
   
   <h2>Educational Details</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Course Name</td>
+        <td>Country</td>
+        <td>Institution Name</td>
+        <td>Year of completion</td>
+      </tr>
+    </thead>
 
-  
+    <tbody>
+      <tr>
+        <td>sssss</td>
+        <td>ss</td>
+        <td>ssss</td>
+        <td>ss </td>
+
+      </tr>
+
+      <tr></tr>
+    </tbody>
+  </table>
+<br>
+
+<div class="buttons">
+  <button class="btn btn-sm btn-primary">Submit</button>
+  <button class="btn btn-sm btn-danger">Cancel</button>
+</div>  
   

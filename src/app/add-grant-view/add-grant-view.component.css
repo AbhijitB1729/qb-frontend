@@ -20,6 +20,8 @@ p{
    }
 .user{
     float:right;
+    position:sticky;
+    margin-top: 50px;
     margin-bottom: 200px;
     margin-left: 1260px;
     

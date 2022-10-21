@@ -21,9 +21,12 @@ h1{
 
 .btn-primary{
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 
 .btn-secondary{
-    margin-bottom:60px;
+    /* margin-bottom:60px; */
+    float:right;
+    margin-top: 40px;
 }
 

@@ -14,12 +14,12 @@ export class EditGrantViewComponent implements OnInit {
  
   constructor(private observer :BreakpointObserver) { }
 
-  currentUser :string|null|undefined;
+  firstName :string|null|undefined;
   role:string|null|undefined;
   
   
   ngOnInit(): void {
-    this.currentUser=localStorage.getItem('currentUser');
+    this.firstName=localStorage.getItem('firstName');
     this.role=localStorage.getItem('role')
     console.log(this.role)
   }

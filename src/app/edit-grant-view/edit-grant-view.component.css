@@ -1,7 +1,7 @@
 mat-sidenav{
     margin:16px;
     width:200px;
-    height:500px;
+     height:500px;
     border-right: none;
     background: #002b5c;
     color:white;
@@ -20,6 +20,8 @@ p{
    }
 .user{
     float:right;
+    position:sticky;
+    margin-top: 50px;
     margin-bottom: 200px;
     margin-left: 1260px;
     

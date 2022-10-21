@@ -1,6 +1,7 @@
 mat-sidenav{
     margin:16px;
     width:200px;
+    height:530px;
     border-right: none;
     background: #002b5c;
     color:white;
@@ -8,6 +9,12 @@ mat-sidenav{
     padding: 16px;
 }
 
+.applicant{
+    margin-left: auto;
+    color:aqua;
+    margin-right: 200px;
+    
+     } 
  /* .content{
 
     
@@ -24,18 +31,21 @@ p{
     text-align: center;
    }
 
-   .applicant{
-    margin-left: auto;
-  margin-right: 200px;
-  
-   }
+
 .user{
     float:right;
+    position:sticky;
+    margin-top: 50px;
     margin-bottom: 200px;
     margin-left: 1260px;
     
    }
 
+   
+   a:link{
+    color: #ffffff;
+    text-decoration: underline;
+   }
 
    a.mat-list-item{
     color: white;

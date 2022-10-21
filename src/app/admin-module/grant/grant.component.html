@@ -2,9 +2,9 @@
 
 <div class="container">
     <h1 class="mb-0">Grant Program</h1>
-
-    <button class=" btn btn-primary " [routerLink]="['/add-grant-view']">ADD</button>
-    <div class="text-end"> 
+     <div>
+    <button [disabled]="isDisabled" class=" btn btn-primary " [routerLink]="['/add-grant-view']">ADD</button>
+    <!-- <div class="text-end">  -->
      <button class=" btn btn-secondary " [routerLink]="['/navs']">Go Back</button>
     </div>   
      <table class="table" *ngIf="grants && grants.length>0" >
@@ -15,7 +15,7 @@
               <td>Program Code</td>  
               <td>Start Date</td>   
               <td>End Date</td>  
-              <td>Actions</td>
+              <td *ngIf="role==='admin'">Actions</td>
             </tr>
         </thead>
         <tbody>
@@ -24,9 +24,9 @@
                 <td>{{grant.programCode}}</td>  
                 <td>{{grant.startDate|date}}</td>  
                 <td>{{grant.endDate|date}}</td>  
-                <td>
-                <button class=" btn btn-sm btn-warning" routerLink="/edit-grant-view/{{grant.id}}">Edit</button>  
-                <button class=" btn btn-sm btn-danger"  (click)="delete(grant.id)">Delete</button>
+                <td *ngIf="role==='admin'">
+                <button  [disabled]="isDisabled" class=" btn btn-sm btn-warning" routerLink="/edit-grant-view/{{grant.id}}">Edit</button>  
+                <button  [disabled]="isDisabled" class=" btn btn-sm btn-danger"  (click)="delete(grant.id)">Delete</button>
                 </td>
             </tr>
         </tbody>

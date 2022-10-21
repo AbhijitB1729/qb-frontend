@@ -21,4 +21,9 @@ export class UsersService {
    onSubmit(registerRequest:User):any{
     return this.http.post(this.baseApiUrl+'/api/Details',registerRequest)
   }
+
+  
+
 }
+
+

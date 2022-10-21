@@ -7,7 +7,7 @@
       </div>
         
         <mat-menu #menu="matMenu">
-          <button [routerLink]="['/login']" mat-menu-item>Logout</button>
+          <button (click)="logout()" [routerLink]="['/login']" mat-menu-item>Logout</button>
         </mat-menu>
       </mat-toolbar-row>
     
@@ -16,14 +16,14 @@
             menu
         </mat-icon>
     </button>
-  <p>  Welcome to GMS, {{currentUser}}</p>
+  <p>  Welcome to GMS, {{firstName}}</p>
 
   <a *ngIf="role==='user'" class="applicant" [routerLink]="['/application']">Applicant form</a>
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav mode="side" opened>
             <mat-nav-list>
-            <a routerLink="/grant-view" mat-list-item color="white" (onClick)="open()" >Grant</a>
+            <a routerLink="/grant-view" mat-list-item color="white"  >Grant</a>
             <a mat-list-item>Review</a>
           </mat-nav-list>
     
@@ -38,6 +38,7 @@
          
     
 </mat-sidenav-container>
+<app-footer></app-footer>
 
 <!-- <footer>
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">

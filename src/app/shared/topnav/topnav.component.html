@@ -44,13 +44,13 @@
 
 
 
-    <div class="container-fluid g-0" id="header">
+    <!-- <div class="container-fluid g-0" id="header">
       <nav class="navbar navbar-expand navbar-dark bg-dark px-2">
           <div class="container-fluid">  
               
               <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()" >
                   <i class="fa-solid fa-bars"></i>
-              <!--    <a class="navbar-brand px-4 me-5" href="#">My App</a>  -->
+                  <a class="navbar-brand px-4 me-5" href="#">My App</a>  
               </div>
       
               <a class="navbar-brand px-4" >Welcome TO GMS</a>
@@ -61,7 +61,7 @@
           
           <div class="profile-logo dropright">
           <button class="btn dropdown-toggle text-light" data-bs-toggle="dropdown" >
-             {{currentUser}} 
+             {{firstName}} 
           </button>
           
           <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end ">
@@ -75,9 +75,28 @@
       </div>
       
       
+       -->
       
       
       
-      
- 
+       <mat-toolbar style="min-height: 30px;height: 120px" color="primary">
+        <mat-toolbar-row>
+            <div class="user">
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>person</mat-icon>
+            </button>
+          </div>
+            
+            <mat-menu #menu="matMenu">
+              <button (click)="logout()" mat-menu-item [routerLink]="['/login']">Logout</button>
+            </mat-menu>
+          </mat-toolbar-row>
+        
+        <button mat-icon-button  >
+             <mat-icon class="menu-icon" >
+                menu
+            </mat-icon>
+        </button>
+      <p>  Welcome to GMS, {{firstName}}</p>
+       </mat-toolbar>
 

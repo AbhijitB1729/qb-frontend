@@ -1,7 +1,7 @@
 mat-sidenav{
     margin:16px;
     width:200px;
-    height:500px;
+    height:530px;
     border-right: none;
     background: #002b5c;
     color:white;
@@ -15,11 +15,14 @@ p{
 
    .applicant{
   margin-left: auto;
+  color:aqua;
   margin-right: 200px;
   
    }
 .user{
     float:right;
+    position:sticky;
+    margin-top: 50px;
     margin-bottom: 200px;
     margin-left: 1260px;
     
@@ -28,6 +31,11 @@ p{
 
    a.mat-list-item{
     color: white;
+   }
+
+   a:link{
+    color:#ffffff;
+    text-decoration: underline;
    }
 
    .menu-icon{

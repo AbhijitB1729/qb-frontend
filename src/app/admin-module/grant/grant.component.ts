@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import {Router, RouterLink} from '@angular/router'
 import { SharedModule } from 'src/app/shared/shared.module';
 import {DatePipe} from '@angular/common'; 
+import { ThisReceiver } from '@angular/compiler';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-grant',
@@ -18,11 +20,27 @@ export class GrantComponent implements OnInit {
     
   
 ];
-    
   
-  constructor(private grantService :GrantService,private router:Router) { }
+  role:string|null|undefined;
+  isDisabled:boolean;
 
+  
+  constructor(private grantService :GrantService,private router:Router, private toast: NgToastService) { 
+   
+    this.role=localStorage.getItem('role');
+    console.log(this.role);
+    if(this.role== 'admin'){
+      this.isDisabled=false;
+    }else{
+      this.isDisabled=true;
+    }
+  }
+
+   
   ngOnInit(): void {
+
+   
+
     this.grantService.getAllDetail().subscribe((res:any) => {     
       console.log(res);
       this.grants = res;
@@ -38,7 +56,7 @@ export class GrantComponent implements OnInit {
     this.grantService.deleteGrant(id).subscribe({
       next : (response:any) => {
         this.router.navigate(['grant-view']);
-        alert("Grant Deleted");
+        this.toast.error({ detail:'Grant deleted', duration:2000})
         this.ngOnInit();
 
       }
